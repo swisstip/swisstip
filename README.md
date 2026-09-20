@@ -1,5 +1,9 @@
 # Swiss TIP
 
+<p align="center">
+  <img src="federal.png" alt="The Federal Palace in Bern drawn as circuit-board traces" width="720">
+</p>
+
 **A Trusted Information Platform for Swiss public information.**
 
 Ask an assistant about a Swiss rule and it will usually produce something
