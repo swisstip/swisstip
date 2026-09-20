@@ -43,11 +43,29 @@ outside what is published, the server says so by name instead of guessing.
 
 ## How it works
 
-```text
-official page -> saved text -> quoted excerpt -> reviewed fact -> versioned release -> four MCP tools
+```mermaid
+flowchart LR
+  page["Official page"]
+
+  subgraph build["Knowledge builder"]
+    direction TB
+    text["Saved text"] --> excerpt["Quoted excerpt"]
+    excerpt --> fact["Reviewed fact"]
+  end
+
+  release{{"Versioned release<br/>sealed and hashed"}}
+
+  subgraph serve["MCP server"]
+    direction TB
+    tools["get_coverage<br/>search<br/>resolve<br/>get_evidence"]
+  end
+
+  page --> text
+  fact --> release --> tools
+  tools --> caller["Calling assistant<br/>writes the answer"]
 ```
 
-Two separate programs stand on either side of that arrow, and the sealed
+Two separate programs stand on either side of that pipeline, and the sealed
 release is the only thing passing between them. The **knowledge builder**
 turns source pages into a release and refuses to publish one until its
 acceptance and readiness checks pass. The **MCP server** answers from a
