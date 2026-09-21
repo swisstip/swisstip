@@ -1,7 +1,7 @@
 # Swiss TIP
 
 <p align="center">
-  <img src="federal.png" alt="The Federal Palace in Bern drawn as circuit-board traces" width="720">
+  <img src="switzerland.png" alt="Switzerland map drawn as circuit-board traces" width="720">
 </p>
 
 **A Trusted Information Platform for Swiss public information.**
